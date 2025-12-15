@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weatherly</title>
+  </head>
+
+  <body>
+    <div id="weather-background"></div>
+
+    <!-- Header injected by JS -->
+    <div id="header-container"></div>
+
+    <main class="container">
+      <h1>Weather Now ⛅</h1>
+      <h2 id="weather-greeting"></h2>
+
+      <section class="input-section">
+        <input type="text" id="cityInput" placeholder="Enter city name" autofocus />
+        <button id="getWeatherBtn">Get Weather</button>
+      </section>
+
+      <div id="spinner" class="loader" style="display: none;"></div>
+
+      <section class="weather-info" style="display: none;">
+        <h2 id="temp"></h2>
+        <p id="condition"></p>
+        <div id="emoji" class="emoji" style="display: none;"></div>
+        <div class="details">
+          <p id="humidity"></p>
+          <p id="wind"></p>
+          <p id="latitude"></p>
+          <p id="longitude"></p>
+        </div>
+      </section>
+
+      <section class="forecast-section">
+        <h2 id="forecast-title" style="display: none;">3-Day Forecast</h2>
+
+        <div id="forecast-carousel" class="forecast-carousel" style="display: none;">
+          <div class="forecast-card" onclick="showHourlyForecast(0)">
+            <p id="day0"></p>
+            <img id="icon0" />
+            <p id="temp0"></p>
+            <p id="desc0"></p>
+          </div>
+
+          <div class="forecast-card" onclick="showHourlyForecast(1)">
+            <p id="day1"></p>
+            <img id="icon1" />
+            <p id="temp1"></p>
+            <p id="desc1"></p>
+          </div>
+
+          <div class="forecast-card" onclick="showHourlyForecast(2)">
+            <p id="day2"></p>
+            <img id="icon2" />
+            <p id="temp2"></p>
+            <p id="desc2"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="hourly-forecast" style="display: none;">
+        <h2>Hourly Forecast</h2>
+        <div id="hourly-container"></div>
+      </section>
+    </main>
+
+    <!-- Footer injected by JS -->
+    <div id="footer-container"></div>
+
+    <!-- ONE script only -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
